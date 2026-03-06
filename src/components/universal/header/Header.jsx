@@ -9,8 +9,8 @@ const Header = ({ onClick }) => {
                 <p>Low prices, low morals!</p>
             </div>
             <Button 
+                type={`${styles.btn} ${styles.toShop}`}
                 onClick={onClick}
-                type="default"
                 label="Go to shop"
             />
         </header>

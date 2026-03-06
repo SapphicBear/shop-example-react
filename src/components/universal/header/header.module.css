@@ -6,3 +6,13 @@ header {
     display: flex;
     gap: 1rem;
 }
+
+.btn {
+    composes: btn from "../button/button.module.css";
+}
+
+.btn.toShop {
+    font-size: 1.25rem;
+    padding: 1rem;
+    max-width: 10rem;
+}

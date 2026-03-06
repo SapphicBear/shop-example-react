@@ -1,4 +1,19 @@
 /* Default styles for all components */
 
 /* Colors */
-
+body {
+    --primary: rgb(69, 83, 207);
+    --secondary: rgb(255, 244, 219);
+}
+.primaryBg {
+    background-color: var(--primary);
+}
+.secondaryBg {
+    background-color: var(--secondary);
+}
+.primaryColor {
+    color: var(--secondary);
+}
+.secondaryColor {
+    background-color: var(--primary);
+}
