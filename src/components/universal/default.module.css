@@ -1,6 +1,19 @@
 /* Default styles for all components */
-
+body {
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+NavLink {
+    text-decoration: none;
+}
+h1 {
+    color: black;
+}
 /* Colors */
+
 body {
     --primary: rgb(69, 83, 207);
     --secondary: rgb(255, 244, 219);

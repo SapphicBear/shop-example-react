@@ -1,18 +1,28 @@
 import Root from "./components/App";
+import Home from "./components/homepage/Home";
+import Shopping from "./components/shopping/Shopping";
+import Cart from "./components/cart/Cart";
 const routes = [
     {
         path: "/",
         element: <Root />,
         errorElement: null,
+        children: [
+            {
+                index: true,
+                element: <Home />,
+            },
+            {
+                path: "/shop",
+                element: <Shopping />
+            },
+            {
+                path: "/shopping-cart",
+                element: <Cart />
+            },
+        ],
     },
-    {
-        path: "/shop",
-        element: <h1>The shop</h1>
-    },
-    {
-        path: "/shopping-cart",
-        element: <h1>Shopping-cart</h1>
-    }
+    
 ];
 
 export default routes;

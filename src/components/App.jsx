@@ -1,18 +1,23 @@
+// import styles from "./universal/default.module.css";
 import Header from "./universal/header/Header";
-import { Link } from "react-router";
+import { Outlet } from "react-router";
 
 const Root = () => {
+    const onClick = {
+        toShop() {
+
+        },
+        toCart() {
+
+        },
+    }
+
     return (
         <>
-            <Header />
-            <ul>
-                <li>
-                    <Link to="/shop">Shop</Link>
-                </li>
-                <li>
-                    <Link to="/shopping-cart">Shopping Cart</Link>
-                </li>
-            </ul>
+            <Header 
+                onClick={onClick}
+            />
+            <Outlet />
         </>
     );
 }
