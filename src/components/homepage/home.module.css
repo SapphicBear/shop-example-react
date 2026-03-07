@@ -1,0 +1,4 @@
+.main {
+    max-height: 100vh;
+    composes: mainBgArea from "./../universal/default.module.css";
+}

@@ -1,0 +1,61 @@
+.shopping {
+    --box-shadow: rgba(71, 68, 68, 0.432) 4px 4px 4px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+}
+.sidebar {
+    composes: sidebar from "./sidebar/sidebar.module.css";
+    min-width: 250px;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    box-shadow: var(--box-shadow);
+}
+.main {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    z-index: -1;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    composes: mainBgArea from "./../universal/default.module.css";
+
+}
+.product {
+    background: white;
+    box-shadow: var(--box-shadow);
+    display: grid;
+    align-content: space-around;
+    padding: 1rem;
+    gap: 0 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    composes: border from "./../universal/default.module.css";
+    max-width: 400px;
+    max-height: 500px;
+    & > p {
+        border: solid 2px black;
+        border-radius: 4px;
+        padding: 0.3rem;
+    }
+}
+.image {
+    max-width: 200px;
+    max-height: 200px;
+}
+.title {
+    grid-column: 1 / -1;
+}
+.desc {
+    grid-column: 2 / -1;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+.btn {
+    composes: btn from "./../universal/button/button.module.css";
+    grid-column: 3 / 4;
+}

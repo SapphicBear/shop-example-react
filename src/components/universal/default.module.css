@@ -1,22 +1,26 @@
 /* Default styles for all components */
 body {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 a {
     text-decoration: none;
 }
+li, ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
 NavLink {
     text-decoration: none;
-}
-h1 {
-    color: black;
 }
 /* Colors */
 
 body {
-    --primary: rgb(69, 83, 207);
-    --secondary: rgb(255, 244, 219);
+    --primary: rgb(255, 183, 207);
+    --secondary: rgb(38, 51, 173);
+    --shadow: rgba(71, 68, 68, 0.432);
 }
 .primaryBg {
     background-color: var(--primary);
@@ -28,5 +32,23 @@ body {
     color: var(--secondary);
 }
 .secondaryColor {
-    background-color: var(--primary);
+    color: var(--primary);
+}
+.boxShadow {
+    box-shadow: var(--shadow) 0 4px 4px;
+}
+.border {
+    --base: rgb(10, 31, 153);
+    --highlight: rgb(153, 168, 253);
+    border: solid 3px var(--base);
+    border-top-color: var(--highlight);
+    border-left-color: var(--highlight);
+    border-radius: 4px;
+}
+.mainBgArea {
+    background: rgb(204, 213, 224);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 }

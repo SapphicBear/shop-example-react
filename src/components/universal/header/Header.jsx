@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header className={styles.header} aria-labelledby="message">
             <div className={styles.logoArea}>
-                <NavLink to="/"><h1 id="message">Example Shop in React!</h1></NavLink>
+                <NavLink to="/"><h1 id="message" className={styles.h1}>Example Shop in React!</h1></NavLink>
                 <p>Low prices, low morals!</p>
             </div>
             <nav className={styles.buttonArea}>

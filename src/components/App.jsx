@@ -13,12 +13,12 @@ const Root = () => {
     }
 
     return (
-        <>
+        <div>
             <Header 
                 onClick={onClick}
             />
             <Outlet />
-        </>
+        </div>
     );
 }
 

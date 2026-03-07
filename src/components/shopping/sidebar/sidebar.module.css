@@ -1,0 +1,32 @@
+.sidebar {
+    background: rgb(214, 218, 236);
+    padding: 1rem;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.logo, .product {
+    composes: border from "./../../universal/default.module.css";
+    background: white;
+}
+.logo {
+    font-size: 18px;
+    padding: 1rem;
+    text-align: center;
+}
+.wares {
+    display: flex;
+    max-width: 250px;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+.product {
+    max-width: 250px;
+    max-height: 25px;
+    padding-left: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
