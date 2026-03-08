@@ -19,7 +19,7 @@ NavLink {
 
 body {
     --primary: rgb(255, 183, 207);
-    --secondary: rgb(38, 51, 173);
+    --secondary: rgb(89, 93, 141);
     --shadow: rgba(71, 68, 68, 0.432);
 }
 .primaryBg {
@@ -38,12 +38,12 @@ body {
     box-shadow: var(--shadow) 0 4px 4px;
 }
 .border {
-    --base: rgb(10, 31, 153);
-    --highlight: rgb(153, 168, 253);
-    border: solid 3px var(--base);
+    --base: rgb(72, 79, 117);
+    --highlight: rgb(191, 191, 218);
+    border: solid 0.15rem var(--base);
     border-top-color: var(--highlight);
     border-left-color: var(--highlight);
-    border-radius: 4px;
+    border-radius: 10px;
 }
 .mainBgArea {
     background: rgb(204, 213, 224);
