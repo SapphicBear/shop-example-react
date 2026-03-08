@@ -1,4 +1,4 @@
-// import styles from "./universal/default.module.css";
+import styles from "./universal/default.module.css";
 import Header from "./universal/header/Header";
 import { Outlet } from "react-router";
 
@@ -13,7 +13,7 @@ const Root = () => {
     }
 
     return (
-        <div>
+        <div className={styles.mainBG}>
             <Header 
                 onClick={onClick}
             />

@@ -15,13 +15,12 @@
 .main {
     grid-column: 2 / -1;
     grid-row: 1 / -1;
-    z-index: -1;
     padding: 1rem;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    composes: mainBgArea from "./../universal/default.module.css";
+    
 
 }
 .product {
@@ -34,8 +33,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     composes: border from "./../universal/default.module.css";
-    max-width: 400px;
-    max-height: 500px;
+    max-width: 350px;
+    max-height: 400px;
     & > p {
         border: solid 2px black;
         border-radius: 4px;
@@ -43,19 +42,33 @@
     }
 }
 .image {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100px;
+    max-height: 120px;
+    grid-column: 1;
 }
 .title {
+    
+    grid-row: 1 / 2;
     grid-column: 1 / -1;
 }
+.cate {
+    grid-column: 2;
+}
+.rate {
+    grid-column: 3;
+}
 .desc {
-    grid-column: 2 / -1;
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 3;
     overflow: hidden;
-    white-space: normal;
+    word-wrap: break-word;
+    white-space: pre-wrap;
     text-overflow: ellipsis;
 }
 .btn {
     composes: btn from "./../universal/button/button.module.css";
-    grid-column: 3 / 4;
+}
+.btn.cart {
+    grid-column: 1 / 2;
+    grid-row: 4;
 }

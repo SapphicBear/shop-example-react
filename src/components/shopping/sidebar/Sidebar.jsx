@@ -36,7 +36,11 @@ const Sidebar = ({ className = `${styles.sidebar}`, products, isLoading, error }
         <aside className={className} aria-labelledby="aside-id">
             <h1 id="aside-id" className={styles.logo}>Categories</h1>
             <ul className={styles.accordianArea}>
-            {
+            { isLoading ? (
+                <div className={styles.product}>Loading...</div>
+            ) : error ? (
+                <div className={styles.product}>An error occurred</div>
+            ) :
                 categories.map((cat, i) => {
                     return (
                         <Accordian 

@@ -52,3 +52,7 @@ body {
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(7, 1fr);
 }
+.mainBG {
+    background: rgb(204, 213, 224);
+    min-height: 100vh;
+}

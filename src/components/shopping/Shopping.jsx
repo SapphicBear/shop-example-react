@@ -3,6 +3,26 @@ import Button from "./../universal/button/Button";
 import Sidebar from "./sidebar/Sidebar";
 import styles from "./shopping.module.css";
 
+const ProductCard = ({ onClick, product }) => {
+    return (
+        <div 
+            key={product.id}
+            className={styles.product}
+        >
+            <h2 className={styles.title}>{product.title}</h2>
+            <img src={product.image} alt={product.title} width="150px" className={styles.image}/>
+            <p className={styles.desc}>{product.description}</p>
+            <p className={styles.cate}>Category: {product.category}</p>
+            <p className={styles.rate}>{`${product.rating.rate}/5 ${product.rating.count} reviews`}</p>
+            <Button 
+                onClick={onClick}
+                label="Add to cart"
+                type={`${styles.btn} ${styles.cart}`}
+            />
+        </div>
+    )
+};
+
 const Shopping = ({ onClick }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -29,26 +49,18 @@ const Shopping = ({ onClick }) => {
                 error={error}
             />
             <main className={styles.main}>
-                {
+                { loading ? (
+                    <div className={styles.product}>Loading...</div>
+                ) : error ? (
+                    <div className={styles.product}>An error has occurred</div>
+                ) :
                     products.map((item) => {
                         return (
-                            <div 
-                            key={item.id}
-                            className={styles.product}
-                        >
-                            <h2 className={styles.title}>{item.title}</h2>
-                            <img src={item.image} alt={item.title} width="150px" className={styles.image}/>
-                            <p className={styles.desc}>{item.description}</p>
-                            <p className={styles.cat}> Category: {item.category}</p>
-                            <p className={styles.rate}>{`${item.rating.rate}/5 from ${item.rating.count} reviews`}</p>
-                            <p className={styles.price}>${item.price}</p>
-                            <Button 
+                            <ProductCard 
                                 onClick={onClick}
-                                label="Add to cart"
-                                type={styles.btn}
+                                product={item}
                             />
-                        </div>
-                        )
+                        );
                     })
                 }
             </main>
