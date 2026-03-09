@@ -2,7 +2,6 @@ import Root from "./components/App";
 import Home from "./components/homepage/Home";
 import Shopping from "./components/shopping/Shopping";
 import Cart from "./components/cart/Cart";
-
 const routes = [
     {
         path: "/",
