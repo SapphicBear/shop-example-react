@@ -1,0 +1,48 @@
+.main {
+    composes: main from "./shopping.module.css";
+}
+
+.product {
+    justify-items: center;
+    composes: product from "./shopping.module.css";
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    min-width: 500px;
+    max-height: 600px;
+}
+.image {
+    max-width: 400px;
+    max-height: 400px;
+    grid-column: 3 / 4;
+    grid-row: 2;
+}
+.title {
+    grid-column: 1 / -1;
+}
+.cate {
+    grid-column: 1 / 3;
+    grid-row: 5;
+}
+.rate {
+    grid-column: 1 / 6;
+    grid-row: 5;
+}
+.desc {
+    grid-row: 3 / 5;
+    grid-column: 1 / -1;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+}
+.btn {
+    composes: btn from "./shopping.module.css";
+}
+.btn.cart {
+    place-self: center;
+    min-width: 130px;
+    max-height: 50px;
+    font-size: 18px;
+    grid-column: 4 / span 3;
+    grid-row: 5 / 6;
+}

@@ -49,6 +49,7 @@
     font-size: 20px;
 }
 .accordianCat {
+    cursor: pointer;
     display: flex;
     gap: 1rem;
     align-items: center;
