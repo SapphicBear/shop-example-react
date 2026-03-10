@@ -21,18 +21,11 @@ const Product = ({ title, price, img, onClick}) => {
 
 const Cart = () => {
     const [itemsInCart, setItemsInCart] = useOutletContext();
-    function handleTotal() {
-        if (itemsInCart.length == 1) {
-            return +itemsInCart[0].price;
-        } else {
-            let total =  itemsInCart.reduce((prev, curr) => +prev.price + +curr.price);
-            return total;
-        }
-    }
+    
     const handleDeleteItem = (id) => {
-        const newItems = itemsInCart.filter((item) => item.id !== id)
-        console.log(newItems)
-        setItemsInCart(newItems);
+        let filtered = itemsInCart.filter((item) => item.id !== id)
+        console.log(filtered)
+        setItemsInCart(filtered);
     }
     return (
         <main className={styles.shoppingCart}>
@@ -46,17 +39,17 @@ const Cart = () => {
                                 <li key={i}>
                                     <Product 
                                         key={i}
-                                        id={`${item.id}`}
+                                        id={item.id}
                                         title={item.title}
                                         price={item.price}
                                         img={item.image}
-                                        onClick={handleDeleteItem}
+                                        onClick={() => handleDeleteItem(item.id)}
                                     />
                                 </li>
                             )
                             })
                     ) : (
-                        <li className={styles.product}>
+                        <li className={styles.empty}>
                             No items in cart
                         </li>
                     )
@@ -64,9 +57,7 @@ const Cart = () => {
                 </ul>
                 <div className={styles.checkout}>
                     <h3>
-                        Your total: { itemsInCart.length !== 0 == true ? (
-                            handleTotal()
-                        ) : "0.00"}
+                        
                     </h3>
                     <Button 
                         label="Checkout"

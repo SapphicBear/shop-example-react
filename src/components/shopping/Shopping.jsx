@@ -34,7 +34,13 @@ const Shopping = () => {
 
     function handleAddToCart(item) {
         let cart = [...itemsInCart];
-        cart.push(item);
+        if (cart.includes(item)) {
+            let newItem = {...item};
+            newItem.id = crypto.randomUUID();
+            cart.push(newItem);
+        } else {
+            cart.push(item);
+        }
         setItemsInCart(cart);
     }
 
@@ -87,10 +93,10 @@ const Shopping = () => {
                         product={products[0]}
                     />
                 ) :
-                    products.map((item) => {
+                    products.map((item, i) => {
                         return (
                             <ProductCard
-                                key={item.id}
+                                key={i}
                                 style={styles}
                                 onClick={() => {
                                     handleAddToCart(item);
