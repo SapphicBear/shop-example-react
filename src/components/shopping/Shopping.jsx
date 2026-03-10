@@ -39,6 +39,7 @@ const Shopping = () => {
             newItem.id = crypto.randomUUID();
             cart.push(newItem);
         } else {
+            item.id = crypto.randomUUID();
             cart.push(item);
         }
         setItemsInCart(cart);
