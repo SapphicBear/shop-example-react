@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router";
 import Button from "./../universal/button/Button";
 import Sidebar from "./sidebar/Sidebar";
 import styles from "./shopping.module.css";
@@ -24,11 +25,19 @@ const ProductCard = ({ onClick, product, style }) => {
     );
 };
 
-const Shopping = ({ onClick }) => {
+const Shopping = () => {
+    const [itemsInCart, setItemsInCart] = useOutletContext();
     const [initialProducts, setInitialProducts] = useState([]);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    function handleAddToCart(item) {
+        let cart = [...itemsInCart];
+        cart.push(item);
+        setItemsInCart(cart);
+        console.log(itemsInCart);
+    }
 
     const filterByCategory = (category) => {
         const productsByCat = initialProducts.filter((item) => item.category === category);
@@ -75,7 +84,7 @@ const Shopping = ({ onClick }) => {
                 ) : products.length === 1 == true ? (
                     <ProductCard 
                         style={largeStyles}
-                        onClick={onClick}
+                        onClick={() => handleAddToCart(products[0])}
                         product={products[0]}
                     />
                 ) :
@@ -84,7 +93,9 @@ const Shopping = ({ onClick }) => {
                             <ProductCard
                                 key={item.id}
                                 style={styles}
-                                onClick={onClick}
+                                onClick={() => {
+                                    handleAddToCart(item);
+                                }}
                                 product={item}
                             />
                         );
