@@ -36,7 +36,6 @@ const Shopping = () => {
         let cart = [...itemsInCart];
         cart.push(item);
         setItemsInCart(cart);
-        console.log(itemsInCart);
     }
 
     const filterByCategory = (category) => {

@@ -1,0 +1,50 @@
+.border {
+    composes: border from "./../universal/default.module.css";
+}
+.btn {
+    composes: btn from "./../universal/button/button.module.css";
+}
+.shoppingCart {
+    min-height: 100vh;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.product {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 500px;
+    height: 200px;
+    padding: 1rem;
+    background: white;
+}
+.image {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    max-width: 80px;
+}
+.price {
+    grid-row: 2;
+}
+.title {
+    place-self: start;
+    grid-row: 1;
+    grid-column: 1 / 4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 400px;
+}
+.buttonArea {
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+}
