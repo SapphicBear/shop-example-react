@@ -1,20 +1,22 @@
 import styles from "./sidebar.module.css";
-import { NavLink } from "react-router";
 import { useState } from "react";
 
 const Accordian = ({ title, content, id, handleProduct, filter }) => {
     const [activeId, setActiveId] = useState(null);
 
+    function handleActId(id, title) {
+        activeId === id ? setActiveId(null) : setActiveId(id);
+        filter(title);
+    }
+
     return (
         <>
             <div className={styles.accordian}>
-                <div className={styles.accordianCat} onClick={() => {
-                    filter(title)
-                }}>
+                <div className={styles.accordianCat}>
                 <p 
                     className={styles.accordianTitle} 
                     onClick={() => {
-                        activeId === id ? setActiveId(null) : setActiveId(id);
+                        handleActId(id, title);
                     }}>
                         {title}
                     </p>
@@ -60,6 +62,7 @@ const Sidebar = ({ className = `${styles.sidebar}`, products, isLoading, error, 
                             title={cat}
                             content={products.filter((item) => item.category == cat)}
                             id={i}
+                            key={i}
                             handleProduct={handleProduct}
                         />
                     )

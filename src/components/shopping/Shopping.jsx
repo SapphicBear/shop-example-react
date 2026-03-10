@@ -82,6 +82,7 @@ const Shopping = ({ onClick }) => {
                     products.map((item) => {
                         return (
                             <ProductCard
+                                key={item.id}
                                 style={styles}
                                 onClick={onClick}
                                 product={item}

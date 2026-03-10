@@ -36,9 +36,10 @@
     max-width: 350px;
     max-height: 400px;
     & > p {
-        border: solid 2px black;
+        border: solid 1px rgb(223, 229, 231);
         border-radius: 4px;
         padding: 0.3rem;
+        background: rgb(240, 242, 243);
     }
 }
 .image {

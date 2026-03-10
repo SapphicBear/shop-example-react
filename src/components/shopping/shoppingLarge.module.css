@@ -9,6 +9,12 @@
     grid-template-rows: repeat(5, 1fr);
     min-width: 500px;
     max-height: 600px;
+    & > p {
+        border: solid 1px rgb(223, 229, 231);
+        border-radius: 4px;
+        padding: 0.3rem;
+        background: rgb(240, 242, 243);
+    }
 }
 .image {
     max-width: 400px;
