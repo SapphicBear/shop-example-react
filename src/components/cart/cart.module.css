@@ -81,3 +81,13 @@
 .checkoutButton {
     align-self: flex-end;
 }
+
+@media (max-width: 685px) {
+    .product {
+        
+        width: 250px;
+    }
+    .title {
+        max-width: 200px;
+    }
+}
