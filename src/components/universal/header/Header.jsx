@@ -1,9 +1,10 @@
 import { NavLink } from "react-router";
 import styles from "./header.module.css";
-import Button from "../button/Button";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
-const Header = () => {
+const Header = ({ itemsInCart }) => {
+
 
     return (
         <header className={styles.header} aria-labelledby="message">
@@ -19,7 +20,14 @@ const Header = () => {
                 <NavLink 
                     to="/shopping-cart"
                     className={`${styles.btn} ${styles.shopCart}`}
-                ><FontAwesomeIcon icon={faBasketShopping}/></NavLink>
+                ><FontAwesomeIcon icon={faBasketShopping}/></NavLink> 
+                    {
+                        itemsInCart === 0 == true ? (
+                            ""
+                        ) : (
+                            <span className={styles.span}>{itemsInCart}</span>
+                        )
+                    }
             </nav>
         </header>
     );

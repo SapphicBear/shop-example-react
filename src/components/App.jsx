@@ -11,7 +11,7 @@ const Root = () => {
 
     return (
         <div className={styles.mainBG}>
-            <Header />
+            <Header itemsInCart={itemsInCart.length}/>
             <Outlet context={[itemsInCart, setItemsInCart]} />
         </div>
     );

@@ -33,8 +33,23 @@
     align-self: center;
 }
 .buttonArea {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+}
+
+.span {
+    position: absolute;
+    max-width: 1rem;
+    color: rgb(255, 234, 241);
+    padding: 0.8rem;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 50%;
+    background: rgb(70, 142, 236);
+    right: -13px;
+    top: -22px;
 }
