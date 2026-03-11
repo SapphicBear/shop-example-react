@@ -1,4 +1,8 @@
 /* Default styles for all components */
+@import url(https://fonts.bunny.net/css?family=akshar:400);
+@import url(https://fonts.bunny.net/css?family=allerta:400);
+
+
 body {
     box-sizing: border-box;
     padding: 0;
@@ -21,6 +25,7 @@ body {
     --primary: rgb(255, 183, 207);
     --secondary: rgb(89, 93, 141);
     --shadow: rgba(71, 68, 68, 0.432);
+    font-family: 'Allerta', sans-serif;
 }
 .primaryBg {
     background-color: var(--primary);
