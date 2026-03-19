@@ -60,12 +60,14 @@
     background: white;
     grid-column: 2 / 5;
     grid-row: 3;
-    max-height: 200px;    
+    min-height: 200px;
+    max-height: 210px;
 }
 .linkArea {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     font-size: 14px;
 }
@@ -91,5 +93,11 @@
     }
     .callToAction, .final, .buttonArea, .ad {
        transform: translate(0px);
+    }
+    .final {
+        max-height: fit-content;
+    }
+    .linkArea {
+        flex-direction: column;
     }
 }
